@@ -124,7 +124,7 @@ main {
     margin: 5px 0;
 }
 
-#quote-btn {
+#purchase-btn {
     display: block;
     margin: 5px auto;
     padding: 8px;
@@ -138,14 +138,14 @@ main {
     transition: color 0.2s, background-color 0.2s;
 }
 
-#quote-btn:hover {
+#purchase-btn:hover {
     cursor: pointer;
     color: var(--gray1);
     background-color: var(--blue1);
     transition: color 0.2s, background-color 0.2s;
 }
 
-#quote-btn:active {
+#purchase-btn:active {
     color: var(--orange1);
     background-color: var(--orange1);
 }
