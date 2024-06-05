@@ -1,5 +1,5 @@
 let price = 1.87;
-let cid = [
+let cid = [         // cash in drawer
   ["PENNY", 1.01],
   ["NICKEL", 2.05],
   ["DIME", 3.1],
