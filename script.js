@@ -14,6 +14,12 @@ let cid = [         // cash in drawer
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
 
-purchaseBtn.addEventListener('click', () => {
-  alert("you clicked meh!");
-});
+purchaseBtn.addEventListener('click', getChange);
+
+function getChange() {  // highest order function that runs when button is clicked
+  validateInput();
+}
+
+function validateInput() {  // validate correct user input
+
+}
