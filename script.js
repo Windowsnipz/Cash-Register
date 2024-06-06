@@ -10,3 +10,7 @@ let cid = [         // cash in drawer
   ["TWENTY", 60],
   ["ONE HUNDRED", 100]
 ];
+
+const cash = document.getElementById('cash');
+const purchaseBtn = documetn.getElementById('purchase-btn');
+
