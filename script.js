@@ -13,13 +13,26 @@ let cid = [         // cash in drawer
 
 const cash = document.getElementById('cash');
 const purchaseBtn = document.getElementById('purchase-btn');
+const changeDueDiv = document.getElementById('change-due');
+const resultText = document.getElementById('result-text');
 
 purchaseBtn.addEventListener('click', getChange);
 
 function getChange() {  // highest order function that runs when button is clicked
   validateInput();
+  checkCash();
 }
 
 function validateInput() {  // validate correct user input
+  return true;
+}
 
+function checkCash() {  // checks cases when cash is not enough or exact change
+  if (parseFloat(cash.value) < price) {
+    alert('Customer does not have enough money to purchase the item');
+  } else if (parseFloat(cash.value) === price) {
+    changeDueDiv.classList.add('input-wrapper');
+    resultText.textContent = 'No change due - customer paid with exact cash';
+
+  }
 }
