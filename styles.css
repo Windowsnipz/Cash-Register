@@ -102,7 +102,7 @@ main {
 }
 
 /* Input-wrapper */
-#input-wrapper {
+.input-wrapper {
     border: 2px solid var(--orange1);
     border-radius: 30px;
     width: 50%;
@@ -112,11 +112,11 @@ main {
     background-color: var(--gray2);
 }
 
-#input-wrapper h4 {
+.input-wrapper h4 {
     padding: 10px 0;
 }
 
-#number {
+#cash {
     border-radius: 5px;
     border: none;
     height: 20px;
