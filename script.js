@@ -12,5 +12,8 @@ let cid = [         // cash in drawer
 ];
 
 const cash = document.getElementById('cash');
-const purchaseBtn = documetn.getElementById('purchase-btn');
+const purchaseBtn = document.getElementById('purchase-btn');
 
+purchaseBtn.addEventListener('click', () => {
+  alert("you clicked meh!");
+});
