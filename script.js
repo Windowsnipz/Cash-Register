@@ -40,5 +40,10 @@ function checkCash() {  // checks cases when cash is not enough or exact change
 }
 
 function renderChange() {
-  
+  const change = parseFloat((parseFloat(cash.value) - price).toFixed(2));
+  const changeArr = [];
+
+  for (let i = cid.length - 1; i > 0; i--) {
+    
+  }
 }
