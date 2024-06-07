@@ -40,10 +40,41 @@ function checkCash() {  // checks cases when cash is not enough or exact change
 }
 
 function renderChange() {
-  const change = parseFloat((parseFloat(cash.value) - price).toFixed(2));
+  let change = parseFloat((parseFloat(cash.value) - price).toFixed(2));
   const changeArr = [];
 
-  for (let i = cid.length - 1; i > 0; i--) {
+  for (let i = cid.length - 1; i >= 0; i--) {  // loop through cid backwards
+    while (change >= cid[i][1]) {  // while enough in drawer for change
+      switch (cid[i]) {
+        case "PENNY":
+          cid[i][1] -= 0.01;
+          break;
+        case "NICKEL":
+          cid[i][1] -= 0.05;
+          break;
+        case "DIME":
+          cid[i][1] -= 0.1;
+          break;
+        case "QUARTER":
+          cid[i][1] -= 0.25;
+          break;
+        case "ONE":
+          cid[i][1] -= 1;
+          break;
+        case "FIVE":
+          cid[i][1] -= 5;
+          break;
+        case "TEN":
+          cid[i][1] -= 10;
+          break;
+        case "TWENTY":
+          cid[i][1] -= 20;
+          break;
+        case "ONE HUNDRED":
+          cid[i][1] -= 100;
     
+          break;
+      }
+    }
   }
 }
