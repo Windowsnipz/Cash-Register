@@ -28,6 +28,5 @@ function checkCash() {  // checks cases when cash is not enough or exact change
   } else if (parseFloat(cash.value) === price) {
     changeDueDiv.classList.add('input-wrapper');
     resultText.textContent = 'No change due - customer paid with exact cash';
-
   }
 }
