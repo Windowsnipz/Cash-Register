@@ -19,12 +19,7 @@ const resultText = document.getElementById('result-text');
 purchaseBtn.addEventListener('click', getChange);
 
 function getChange() {  // highest order function that runs when button is clicked
-  validateInput();
   checkCash();
-}
-
-function validateInput() {  // validate correct user input
-  return true;
 }
 
 function checkCash() {  // checks cases when cash is not enough or exact change
