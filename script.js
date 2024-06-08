@@ -120,6 +120,11 @@ function renderChange() {
       changeArr[i][1] += denomination;
      }
    }
+
+  if (change > 0) {
+    resultText.textContent = 'Status: INSUFFICIENT_FUNDS';
+    return;
+  }
   
 
 
