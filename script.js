@@ -60,6 +60,16 @@ function renderChange() {
 
 
   let change = parseFloat((parseFloat(cash.value) - price).toFixed(2));
+
+  if (change > cid.reduce((total, curr) => total + curr[1], 0)) {
+    resultText.textContent = 'Status: INSUFFICIENT_FUNDS';
+    return;
+  } else if (change === cid.reduce((total, curr) => total + curr[1], 0)) {
+    resultText.textContent = 'Status: CLOSED';
+  } else {
+    resultText.textContent = 'Status: OPEN';
+  }
+
   const changeArr = [
     ["PENNY", 0],
     ["NICKEL", 0],
