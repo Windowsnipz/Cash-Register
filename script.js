@@ -25,8 +25,11 @@ purchaseBtn.addEventListener('click', getChange);
 
 function renderCashInDrawer() { // lists cid array values to the html
   const registerChangeDiv = document.getElementById('register-change');
+  registerChangeDiv.innerHTML = '';
+  
+  registerChangeDiv.innerHTML += `<h3>Cash Drawer</h3>`;
   for (let i = 0; i < cid.length; i++) {
-    registerChangeDiv.innerHTML += `<p>${cid[i][0]}: $${cid[i][1].toFixed(2)}</p>`;
+    registerChangeDiv.innerHTML += `<p class="money">${cid[i][0]}: $${cid[i][1].toFixed(2)}</p>`;
   }
 }
 
@@ -53,6 +56,9 @@ function checkCash() {  // checks cases when cash is not enough or exact change
 }
 
 function renderChange() {
+  resultText.textContent = ''; // clear div
+
+
   let change = parseFloat((parseFloat(cash.value) - price).toFixed(2));
   const changeArr = [
     ["PENNY", 0],
@@ -106,11 +112,11 @@ function renderChange() {
    }
   
 
-  console.log(changeArr);
 
   const updatedChangeArr = changeArr.filter((currVal) => { // update change array to change items possessed
     return currVal[1] > 0;
   });
+
 
   changeDueDiv.classList.add('input-wrapper'); // ad class to the change due div
   renderCashInDrawer(); // update the html to the changed cash in drawer
