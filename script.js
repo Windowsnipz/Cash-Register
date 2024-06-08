@@ -67,56 +67,44 @@ function renderChange() {
   ];
 
   for (let i = cid.length - 1; i >= 0; i--) {  // loop through cid backwards
-    while (change >= cid[i][1]) {  // while enough in drawer for change
-      switch (cid[i][0]) {
-        case "PENNY":
-          cid[i][1] -= 0.01;
-          change -= 0.01;
-          changeArr[0][1] += 0.01;
-          break;
-        case "NICKEL":
-          cid[i][1] -= 0.05;
-          change -= 0.05;
-          changeArr[1][1] += 0.05;
-          break;
-        case "DIME":
-          cid[i][1] -= 0.1;
-          change -= 0.1;
-          changeArr[2][1] += 0.1;
-          break;
-        case "QUARTER":
-          cid[i][1] -= 0.25;
-          change -= 0.25;
-          changeArr[3][1] += 0.25;
-          break;
+    let denomination;
+    switch (cid[i][0]) {
+      case "PENNY":
+        denomination = 0.01;
+        break;
+      case "NICKEL":
+        denomination = 0.05;
+        break;
+      case "DIME":
+        denomination = 0.1;
+        break;
+      case "QUARTER":
+        denomination = 0.25;
+        break;
         case "ONE":
-          cid[i][1] -= 1;
-          change -= 1;
-          changeArr[4][1] += 1;
-          break;
-        case "FIVE":
-          cid[i][1] -= 5;
-          change -= 5;
-          changeArr[5][1] += 5;
-          break;
-        case "TEN":
-          cid[i][1] -= 10;
-          change -= 10;
-          changeArr[6][1] += 10;
-          break;
-        case "TWENTY":
-          cid[i][1] -= 20;
-          change -= 20;
-          changeArr[7][1] += 20;
-          break;
-        case "ONE HUNDRED":
-          cid[i][1] -= 100;
-          change -= 100;
-          changeArr[8][1] += 100;
-          break;
-      }
-    }
-  }
+        denomination = 1;
+        break;
+      case "FIVE":
+        denomination = 5;
+        break;
+      case "TEN":
+        denomination = 10;
+        break;
+      case "TWENTY":
+        denomination = 20;
+        break;
+      case "ONE HUNDRED":
+        denomination = 100;
+        break;
+     }
+
+     while (change >= denomination && cid[i][1] >= denomination) {
+      cid[i][1] -= denomination;
+      change -= denomination;
+      changeArr[i][1] += denomination;
+     }
+   }
+  
 
   console.log(changeArr);
 
