@@ -99,6 +99,7 @@ main {
 
 .section {
     margin-top: 50px; /* margin below navbar */
+    margin-bottom: 10px;
 }
 
 /* Input-wrapper */
@@ -152,6 +153,24 @@ main {
 
 #result-text {
     margin: auto 50px;
+}
+
+#register-change {
+    border: 2px solid var(--blue1);
+    border-radius: 30px;
+    width: 50%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 10px;
+    background-color: var(--gray2);
+}
+
+#register-change > h3 {
+    margin-bottom: 5px;
+}
+
+#register-change > p {
+    margin: 2px 0;
 }
 
 /* Footer */
