@@ -153,6 +153,8 @@ main {
 
 #result-text {
     margin: auto 50px;
+    font-size: medium;
+    font-weight: 500;
 }
 
 #register-change {
