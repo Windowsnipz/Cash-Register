@@ -105,8 +105,8 @@ function renderChange() {
      }
 
      while (change >= denomination && cid[i][1] >= denomination) {
-      cid[i][1] -= denomination;
-      change -= denomination;
+      cid[i][1] = parseFloat((cid[i][1] - denomination).toFixed(2));
+      change = parseFloat((change - denomination).toFixed(2));
       changeArr[i][1] += denomination;
      }
    }
